@@ -1,0 +1,22 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .signin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+
+    h2 {
+      margin-top: 1rem;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+}

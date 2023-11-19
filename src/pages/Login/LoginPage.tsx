@@ -1,37 +1,22 @@
-import React from "react";
+import { useState } from "react";
+import "./LoginPage.scss";
+
+import { LoginScreen } from "../../interfaces/Login";
+import SignIn from "./SignIn/SignIn";
+import SignUp from "./SignUp/SignUp";
 
 const LoginPage = () => {
-	return (
-		<div>
-			<div>
-				<img src="" alt="" />
-				<h2>Sign in to your account</h2>
-			</div>
+  const [loginScreen, setLoginScreen] = useState<LoginScreen>(LoginScreen.SignIn);
 
-			<div>
-				<form action="#" method="post">
-					<div>
-						<label htmlFor=""></label>
-						<div>
-							<input type="text" />
-						</div>
-					</div>
-				</form>
-			</div>
-
-			<div>
-				<form action="#" method="post">
-					<div>
-						<label htmlFor=""></label>
-						<div>
-							<input type="text" />
-						</div>
-					</div>
-				</form>
-			</div>
-			
-		</div>
-	);
+  return (
+    <div className="login-container">
+      {loginScreen === LoginScreen.SignIn ? (
+        <SignIn setLoginScreen={setLoginScreen} />
+      ) : (
+        <SignUp setLoginScreen={setLoginScreen} />
+      )}
+    </div>
+  );
 };
 
 export default LoginPage;

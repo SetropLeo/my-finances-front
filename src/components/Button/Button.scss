@@ -1,0 +1,11 @@
+.btn {
+  height: 24px;
+
+  &:disabled {
+    cursor: not-allowed !important;
+  }
+
+  p {
+    text-align: center;
+  }
+}
